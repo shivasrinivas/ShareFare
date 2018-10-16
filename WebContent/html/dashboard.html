@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html ng-app="sharefair">
+<head>
+<style>
+html, body {
+	margin: 0;
+	min-height: 100vh;
+	min-width: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.li {
+	list-style-type: none;
+	width: auto;
+	display: block;
+	background-color: #CCCCCC;
+	border-bottom: 1px solid rgba(0, 0, 0, .6);
+}
+
+.ul {
+	margin: 0;
+	padding: 0;
+}
+
+.column {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	height: 100%
+}
+
+.column-main {
+	float: left;
+	width: 60%;
+	background: #FFFFFF;
+	padding: 10px;
+	height: 100%
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: #48be9d;
+	height: 60px;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+li {
+	list-style-type: none;
+	width: auto;
+	display: block;
+	background-color: #FDFDFD;
+	border-bottom: 1px solid rgba(228, 228, 228, 0.8);
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+.expense-date {
+	color: #CCCCCC;
+	width: 10%;
+}
+
+.expense-date_number {
+	font-size: 24px;
+	text-align: center;
+	vertical-align: middle;
+	width: 10%;
+}
+
+.expense-item {
+	display: flex;
+	flex-direction: row;
+}
+
+.expense-item-name {
+	font-weight: bold;
+	color: #4A4A4A;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 14px;
+	text-align: left;
+	width: 50%;
+}
+
+.expense-user-name {
+	color: #CCCCCC;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.expense-payee-name {
+	width: 15%;
+	height: 100%;
+}
+
+.expense-price {
+	color: #4A4A4A;
+	font-size: 24px;
+}
+
+table {
+	border-spacing: 4px;
+}
+
+table.table1 {
+	margin-top: 50px;
+	border-spacing: 4px 0;
+}
+
+table.table1 th {
+	background: #66cdaa;
+	width: 170px;
+	height: 8px;
+	font-family: Comic Sans MS;
+	font-size: 15px;
+	color: white;
+	padding: 1px;
+}
+
+table.table1 td {
+	background: #FFF;
+	border-style: ridge;
+	width: 170px;
+	height: 60px;
+	padding: 2px;
+	margin: 2px;
+}
+
+span, input {
+	margin: 2px;
+}
+
+#mailbox {
+	width: 200px;
+	height: 20px;
+	border-radius: 5px 5px 5px 5px;
+	background: white;
+	padding: 10px;
+	font-size: 12px;
+	font-family: Comic Sans MS;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.button {
+	height: 25px;
+	background: #008CBA;
+	color: white;
+	position: absolute;
+	cursor: pointer;
+	font-family: Comic Sans MS;
+	font-size: 12px;
+	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+.button:hover {
+	opacity: 0.8;
+}
+
+li {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+#list0 {
+	list-style-image: url("../images/dashboard.png");
+}
+
+#list1 {
+	list-style-image: url("../images/list_icon.png");
+}
+
+#list2 {
+	list-style-image: url("../images/human_icon.png");
+}
+
+a:link {
+	color: gray;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+#list3 {
+	list-style-type: none;
+}
+
+#box {
+	background: transparent url("../images/search.png") no-repeat;
+	height: 20px;
+	border-radius: 5px 5px 5px 5px;
+	margin-top: 5px;
+	padding: 10px;
+	font-size: 12px;
+	font-family: Comic Sans MS;
+	border-width: 1px;
+}
+
+#friends {
+	color: gray;
+	height: 25px;
+	padding: 4px;
+	background-color: #eee;
+}
+
+.divider {
+	height: 100%;
+	width: 20px;
+	background: #CCCCCC;
+}
+
+li:hover {
+	background-color: #f5f5f5
+}
+
+#lista {
+	list-style-image: url("../images/user.png");
+	color: gray;
+}
+
+#listb {
+	list-style-image: url("../images/profile.png");
+}
+
+#listc {
+	list-style-image: url("../images/logout.png");
+}
+
+#add-expense {
+	border: none;
+	background: #008CBA;
+	color: white;
+	position: absolute;
+	height: 35px;
+	width: 100px;
+	cursor: pointer;
+	font-family: Comic Sans MS;
+	font-size: 13px;
+	left: 750px;
+	top: 8px;
+	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+#add-expense:hover {
+	opacity: 0.8
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Share Fair</title>
+<script src="../lib/angular.js"></script>
+<script src="../js/sharefair.js"></script>
+</head>
+<body>
+	<div ng-controller="dashboardController" data-ng-init="getFriends()">
+		<div class="topnav">
+			<div class="navbar-header">
+				<a class="navbar-brand">ShareFair</a>
+			</div>
+
+			<input type="submit" ng-click="addExpense()" value="Add expense" id="add-expense">
+
+
+		</div>
+
+		<div class="row">
+			<div class="column">
+				<table cellpadding=0 cellspacing="0"
+					style="border-collapse: collapse;">
+					<tr>
+						<td>
+							<ul>
+								<li id="list0"><a href="url">DASHBOARD</a></li>
+								<li id="list1"><a href="url">All expenses</a></li>
+								<li id="list3"><input placeholder="Filter by name"
+									type="text" id="box" style="text-align: center"></li>
+						</td>
+					</tr>
+					<tr>
+						<td id="friends">FRIENDS
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+							href="url">+Add</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+
+							<ul id="list2">
+								<li ng-repeat="friend in friends">{{friend.username}}</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table class="table1" cellpadding=0 cellspacing="0" height=120px;>
+								<tr>
+									<th>Invite Friends</th>
+
+								</tr>
+								<tr>
+									<td style="vertical-align: top"><span style="margin: 2px"></span>
+										<input placeholder="Enter an email address" type="mail" ng-model="inviteEmail"
+										id="mailbox" style="margin: 2px"><br> <input ng-click="invite()"
+										type="submit" class="button" value="Send invite"
+										style="margin: 2px"></td>
+								</tr>
+
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+			<div class="divider"></div>
+			<div class="column-main">
+				<div>
+					<ul>
+						<li ng-repeat="expense in expenses" class="expense-item">
+							<div class="expense-date">
+								{{getMonthName(expense.date)}}
+								<div class="expense-date_number">{{getDateNumber(expense.date)}}</div>
+							</div>
+							<div class="expense-item-name">{{expense.description}}</div>
+							<div class="expense-user-name expense-payee-name">
+								<span>{{expense.payeeFName + expense.payeeLName}}</span><span>
+									paid </span>
+								<div class="expense-price">${{expense.amount}}</div>
+							</div>
+							<div class="expense-user-name expense-payee-name">
+								<span>{{expense.payeeFName}}</span> <span> lent you </span>
+							</div>
+							<div class="expense-price">${{expense.amountOwed}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="column">
+				<table align="right" cellpadding=0 cellspacing="0"
+					style="border-collapse: collapse;">
+					<tr>
+						<td>
+							<ul>
+								<li id="lista"><h1>{{newStatus}}Hi Srini!</h1></li>
+								<li id="listb"><a ng-click="profile()">Profile</a></li>
+								<li id="listc"><a ng-click="exportExpenses()">Export</a></li>
+								<li id="listd"><a href="url">Log out</a></li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

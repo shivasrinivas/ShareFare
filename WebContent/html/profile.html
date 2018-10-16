@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html ng-app="sharefair">
+<head>
+<meta charset="UTF-8">
+<title>Share Fair</title>
+<script src="lib/angular.js"></script>
+<script src="js/sharefair.js"></script>
+<style>
+#top-nav
+{
+    background-color:#48be9d;
+    padding: 1px 120px;
+    color: white;
+    margin: 0;
+    height: 100px;
+}
+
+#top-nav a
+{
+    text-decoration:none;
+    color:white;
+    font: normal 28px/1.6em Arial, Helvetica, sans-serif;
+    padding-top:25px;
+    float:left;
+    text-align:center;
+}
+
+#top-nav a.homes
+{
+    text-decoration:none;
+    color:white;
+    font: normal 28px/1.6em Arial, Helvetica, sans-serif;
+    padding-top:25px;
+    padding-right:75px;
+    float:right;
+    text-align:center;
+}
+
+
+.homelink
+{
+    font: normal 28px/1.6em Arial, Helvetica, sans-serif;
+    padding-top:1px;
+    float: right;
+    white-space: nowrap;
+}
+
+
+.headline
+{
+    font: normal 28px/1.6em Arial, Helvetica, sans-serif;
+    padding-top:1px;
+}
+
+.home
+{
+    font: normal 32px/1.6em Arial, Helvetica, sans-serif;
+    padding-top:1px;
+    padding-left:50px;
+}
+
+#left-column
+{
+    margin: 0 auto;
+    width: 150px;
+    padding: 0 130px 30px;
+    float: left;
+    
+}
+
+
+#right-column {
+    width:1000px;
+    float:right;
+    text-align: left;
+}
+
+#bottom
+{
+    border-top:1px solid #f0e9eb;
+    padding:10px 15px;
+    clear:both;
+}
+
+#left-bottom
+{
+    margin:0 auto;
+    font:normal 18px Georgia, serif;
+    padding: 0px 130px 30px;
+    width: 400px;
+    float: left;
+}
+
+#right-bottom
+{
+    width:700px;
+    font:normal 18px Georgia, serif;
+    padding: 0px 0px 0px 30px;
+    float:right;
+    text-align: left;
+}
+
+#logo {
+    margin-top:20px;
+    font:normal 18px Georgia, serif;
+}
+
+#logotwo {
+    margin-top:20px;
+    font:normal 18px Georgia, serif;
+    padding: 0px 130px 10px;
+}
+
+
+body
+{
+    margin: 0;
+    background-color:#F9F6A4;
+    
+}
+
+input[type=text], select, password {
+    width: 70%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=password], select, password {
+    width: 70%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #ff652f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- <div id="wrapper">  -->
+<div id="top-nav">
+
+ <a href="dashboard.html"><b>SHAREFAIR</b> </a>
+ <a class="homes" href="dashboard.html"><b>HOME</b> </a>
+ 
+
+
+
+<!-- <p class="headline"><b>SHAREFAIR</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HOME</b>&nbsp;&nbsp;&nbsp; </p> -->
+
+
+</div>
+
+
+
+<div id="main-content">
+<div id="left-column">
+<div id="logo">
+	<h3>Your Profile</h3>
+</div>
+
+<div class="your-image">
+
+<p> <img src="../images/ProfilePhoto.png" width="200" height="200" style="margin: 0 10px 10px 0;float:left;"/></p>
+<p> Change Your Picture </p>
+<input type="file" name="choosefile"/>
+</div>
+
+</div>
+
+<div id="right-column">
+    <h3>Edit Your Profile</h3>
+	
+	<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">Name</label><br/>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.."><br/>
+
+    <!-- <label for="lname">Last Name</label><br/>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br/> -->
+	
+	<label for="email">Email Address</label><br/>
+    <input type="text" id="email" name="emailaddress" placeholder="Your email.."><br/>
+	
+	<label for="Phone">Phone Number</label><br/>
+    <input type="text" id="Phone" name="PhoneNumber" placeholder="Your Phone No.."><br/>
+	
+	<label for="pwd">Password</label><br/>
+    <input type="password" id="pwd" name="pword" placeholder="Your Password.." ><br/>
+
+
+    <input type="submit" value="Save">
+  </form>
+</div>
+
+
+</div>
+
+<div id="bottom">
+<hr/>
+	
+<div id="left-bottom">
+<p><b>Notification</b></p>
+<p><b>Groups and Friends</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../images/email.png"/>
+&nbsp;<img src="../images/mobile.png" /></p>
+<form>
+<label for="fadd">When someone adds me to a group</label>
+<input type="checkbox" name="fadd" value="addfriend">
+<input type="checkbox" name="fadd" value="addfriend"><br/><br/>
+<label for="fadd">When someone adds me as a friend</label>
+<input type="checkbox" name="fadd" value="addfriend">
+<input type="checkbox" name="fadd" value="addfriend"><br/>
+</form>
+</div>
+
+<div id="right-bottom">
+<br/>
+<p><b>Expenses</b>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../images/email.png"/>
+<img src="../images/mobile.png" /></p>
+<form>
+<label for="fadd">When a bill is added/edited/deleted&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input type="checkbox" name="fadd" value="addfriend">
+<input type="checkbox" name="fadd" value="addfriend"><br/><br/>
+<label for="fadd">When someone pays me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</label>
+<input type="checkbox" name="fadd" value="addfriend">
+<input type="checkbox" name="fadd" value="addfriend"><br/><br/>
+<label for="fadd">When someone comments on the bill&nbsp;&nbsp;&nbsp;</label>
+<input type="checkbox" name="fadd" value="addfriend">
+<input type="checkbox" name="fadd" value="addfriend">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Save">
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- </div> -->
+
+
+
+</body>
+</html>

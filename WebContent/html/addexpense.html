@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="sharefair">
+<head>
+<meta charset="UTF-8">
+<title>Share fair</title>
+<script src="../lib/angular.js"></script>
+<script src="../js/sharefair.js"></script>
+<style>
+
+label {
+    display: inline-block;
+    width: 130px;
+font-family:Comic Sans MS;
+font-size:20px;
+}
+.topnav {
+	overflow: hidden;
+	background-color: #48be9d;
+height:60px;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 30px;
+}
+#list1
+ {
+list-style-image: url("../images/friends.png");
+} 
+#list2
+ {
+list-style-image: url("../images/des.png");
+} 
+#list3
+ {
+list-style-image: url("../images/money.png");
+} 
+#list0, #list4
+{
+list-style-type:none;
+}
+li{margin-bottom: 10px;
+margin-top:10px;
+font-family:Comic Sans MS;
+}
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed #000000;
+}
+#box
+{
+font-family:Comic Sans MS;
+font-size:20px;
+}
+#button
+{
+border: none;
+background:#008CBA;
+color:white;
+position:fixed;
+height:30px;
+width:65px;
+cursor:pointer;
+font-family:Comic Sans MS;
+font-size:15px;
+-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+#button:hover
+{
+opacity: 0.8;
+}
+</style>
+</head>
+<body>
+<div ng-controller="dashboardController">
+<div class="topnav">
+			
+<a>ShareFair</a>
+</div>
+
+<ul>
+<li id="list0"><h2>ADD EXPENSE</h2></li>
+<li id="list1">
+<label>With you and:</label>
+<input ng-model="friendEmail" placeholder="Enter an email address" type="text" id="box"></li>
+<li id="list2"><input ng-model="description" placeholder="Enter a description" type="text" id="box"></li>
+<li id="list3">
+$&nbsp; <input ng-model="expenseAmount" placeholder="0.00" type="text" id="box"></li>
+<li id="list4">
+<input ng-click="storeExpense()" type="submit" value="save" id="button"></li>
+</ul>
+</div>
+</body>
+</html>

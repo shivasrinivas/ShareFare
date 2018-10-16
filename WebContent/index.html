@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html ng-app="sharefair">
+<head>
+<meta charset="UTF-8">
+<title>Share Fair</title>
+<script src="lib/angular.js"></script>
+<script src="js/sharefair.js"></script>
+
+<style media="screen" type="text/css">
+.body-options {
+	background-color: #FBF6D9;
+	width: 100%;
+	height: 100%;
+}
+
+.sf_header_base {
+	width: 100%;
+	height: 90px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+.sf_header {
+	width: 100%;
+	height: 90px;
+	display: flex;
+	flex-direction: row;
+	background: #66cdaa;
+	top: 0;
+	left: 0;
+	color: white;
+}
+
+.Email_or_Phone {
+	left: 750px;
+	height: 60px;
+	width: 180px;
+	top: 20px;
+	font-family: Comic Sans MS;
+	font-size: 15px;
+}
+
+.Password {
+	left: 920px;
+	height: 60px;
+	width: 180px;
+	top: 20px;
+	font-family: Comic Sans MS;
+	font-size: 15px;
+}
+
+.button_1 {
+	margin-top: 24px;
+	border: none;
+	background: #008CBA;
+	color: white;
+	z-index: 20;
+	height: 30px;
+	width: 65px;
+	cursor: pointer;
+	font-family: Comic Sans MS;
+	font-size: 15px;
+}
+
+.button_1:hover {
+	opacity: 0.8;
+}
+
+.sf_body {
+	position: absolute;
+	left: 0px;
+	top: 90px;
+	display: flex;
+	margin-right: 50px;
+	flex-direction: row;
+	width: 100%;
+	height: 100%
+}
+
+.text_1 {
+	left: 40px;
+	top: 20px;
+	width: 100%;
+	font-family: Comic Sans MS;
+	font-size: 30px;
+	font-weight: bold;
+	color: #142170;
+	height: 75px;
+}
+
+.text_2 {
+	left: 750px;
+	top: 30px;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	color: #142170;
+	font-weight: bold;
+	height: 75px;
+	width: 500px;
+}
+
+.text_3 {
+	left: 750px;
+	top: 60px;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	font-weight: bold;
+	color: #142170;
+	height: 75px;
+	width: 500px;
+}
+
+.reg_details {
+	top: 120px;
+	left: 750px;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	color: #142170;
+	width: 450px;
+	height: 495px;
+}
+
+.namebox {
+	width: 200px;
+	height: 40px;
+	border-radius: 5px 5px 5px 5px;
+	background: white;
+	padding: 10px;
+	font-size: 18px;
+	font-family: Comic Sans MS;
+	margin-top: 8px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.mailbox {
+	width: 430px;
+	height: 40px;
+	border-radius: 5px 5px 5px 5px;
+	background: white;
+	padding: 10px;
+	font-size: 18px;
+	font-family: Comic Sans MS;
+	margin-top: 8px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.button_2 {
+	width: 452px;
+	height: 40px;
+	border: none;
+	margin: 8px 0;
+	background: #008CBA;
+	font-family: Comic Sans MS;
+	font-size: 18px;
+	color: white;
+	border-radius: 5px 5px 5px 5px;
+	border-width: 1px;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.button_2:hover {
+	opacity: 0.8;
+}
+
+span.psw {
+	display: block;
+	float: none;
+}
+
+span.psw:hover {
+	opacity: 0.8;
+}
+
+.logo {
+	padding-left: 50px;
+	width: 100%;
+	font-family: Fantasy;
+}
+
+#box_1 {
+	width: 150px;
+	height: 20px;
+	border-radius: 5px 5px 5px 5px;
+	background: white;
+	padding: 10px;
+	font-size: 13px;
+	font-family: Comic Sans MS;
+	border-width: 1px;
+	border-style: solid;
+	border-color: white;
+}
+
+.img {
+	top: 130px;
+	left: 178px;
+	width: 537px;
+	height: 195px;
+}
+
+.login-options {
+	display: flex;
+	margin-right: 50px;
+	flex-direction: row;
+}
+
+.body-left {
+	margin-top: 60px;
+	margin-left: 50px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.body-right {
+	margin-top: 60px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+</style>
+
+</head>
+<body class="body-options">
+
+	<div ng-controller="sharefairController" class="sf_header_base">
+
+		<div class="sf_header">
+
+			<div class="logo">
+				<h1>
+					<b>SHAREFAIR</b>
+				</h1>
+			</div>
+
+			<div class="login-options">
+
+				<div class="Email_or_Phone">
+					Email or Phone <input ng-model="userName" placeholder="Username"
+						type="text" id="box_1" />
+				</div>
+
+				<div class="Password">
+					Password<br> <input ng-model="password" placeholder="Password"
+						type="password" id="box_1" /><br> <span class="psw">Forgot
+						<a href="#">password</a>?
+					</span>
+
+
+				</div>
+
+				<div>
+					<input type="submit" ng-click="login()" class="button_1"
+						value="login" />
+				</div>
+			</div>
+			<input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+            
+            {{status}}
+
+		</div>
+
+		<div class="sf_body">
+
+			<div class="body-left">
+				<div class="text_1">Share expenses with your buddies!</div>
+				<div class="img">
+					<img src="images/share.png" />
+				</div>
+			</div>
+
+			<div class="body-right">
+				<div class="text_2">Don’t have an account?</div>
+				<br>
+				<div class="text_3">Then create one!</div>
+
+
+				<div class="reg_details">
+
+					<input ng-model="firstName" placeholder="First Name" type="text"
+						class="namebox" name="name1" /> <input ng-model="lastName"
+						placeholder="Last Name" type="text" class="namebox" /> <br>
+					<input ng-model="registerMail" placeholder="Email" type="text"
+						class="mailbox" /><br> <input ng-model="pwd"
+						placeholder="Password" type="password" class="mailbox" /><br>
+					<input placeholder="Re-enter Password" type="password"
+						class="mailbox" /><br> <input ng-click="register()"
+						type="submit" class="button_2" value="Register" />
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</body>
+</html>
